@@ -1,4 +1,9 @@
 Battery Meter!
 ==============
 
-An awesome meter that tells you your battery and stuff. All online, nothing to install (except if you don't have Chrome or Firefox). [See it here.](http://tac61.webstarts.com/aboutmydevice/battery.html)
+An awesome online Javascript battery meter.
+
+[See it here.](http://tac61.webstarts.com/aboutmydevice/battery.html)
+
+## How it works
+Chrome and Firefox both have their own Battery APIs. They are used differently. Battery Meter uses both methods.
