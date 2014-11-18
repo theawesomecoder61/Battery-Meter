@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,7 +96,7 @@ $("#meter").hide();
 if(bowser.safari) {
 $("#no-safari span").text("By the way, nice computer. :)");
 }
-if(bowser.ipjone) {
+if(bowser.iphone) {
 $("#no-safari span").text("iOS sucks!");
 }
 }
@@ -123,8 +122,8 @@ $("#no-safari span").text("iOS sucks!");
 <td>Discharging Time: <span id="discharging" class="lowercase"></span></td>
 </tr>
 </table>
-<h2>So tell me... how does this work?</h2>
-<p>It's all Javascript. Chrome and Firefox both have a Battery API.</p>
+<h2>How does this work?</h2>
+<p>Chrome and Firefox both have their own Battery APIs. They are used differently. Battery Meter uses both methods.</p>
 </div>
 
 <h2>GitHub</h2>
