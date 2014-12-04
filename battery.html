@@ -22,10 +22,23 @@ padding: 4px 4px;
 <script>
 $(function() {
 
+  function minutesToStr(minutes) {  
+    var sign = "";  
+    if(minutes < 0){  
+      sign = "-";  
+    }  
+    var hours = leftPad(Math.floor(Math.abs(minutes) / 60));  
+    var minutes = leftPad(Math.abs(minutes) % 60);  
+    return Math.round(hours) + " hours and " + Math.round(minutes) + " minutes";  
+  }
+  function leftPad(number) {    
+    return ((number < 10 && number >= 0) ? '0' : '') + number;  
+  }
+
 function updateChrome(battery) {
 $(".progress-bar span").text(Math.floor(battery.level*100) + "%");
 $(".progress-bar").css("width", battery.level*100 + "%").attr("aria-valuenow", battery.level*100);
-$("#discharging").text(battery.dischargingTime / 60);
+$("#discharging").text( minutesToStr(3181/66) );
 if(battery.level*100 <= 100 && battery.level*100 >= 66) {
 $(".progress-bar").removeClass("progress-bar-warning progress-bar-danger").addClass("progress-bar-success");
 }
@@ -46,7 +59,7 @@ function updateFirefox() {
 var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery || navigator.msBattery || null;
 $(".progress-bar span").text(Math.floor(battery.level*100) + "%");
 $(".progress-bar").css("width", battery.level*100 + "%").attr("aria-valuenow", battery.level*100);
-$("#discharging").text(battery.dischargingTime / 60);
+$("#discharging").text( minutesToStr(3181/66) );
 if(battery.level*100 <= 100 && battery.level*100 >= 66) {
 $(".progress-bar").removeClass("progress-bar-warning progress-bar-danger").addClass("progress-bar-success");
 }
